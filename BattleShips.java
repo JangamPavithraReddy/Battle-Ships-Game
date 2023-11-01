@@ -1,9 +1,10 @@
+//AF0331405
 package mini.project1;
 
 import java.util.Scanner;
 
 public class BattleShips {
-	public static int Rows = 10;
+    public static int Rows = 10;
     public static int Cols = 10;
     public static int playerShips;
     public static int computerShips;
