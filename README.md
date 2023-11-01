@@ -1,4 +1,4 @@
-![image](https://github.com/JangamPavithraReddy/Battle-Ships-Game/assets/148047712/2cfe11f6-6e4e-4cef-8e8e-de3964551f5d)# Battle-Ships-Game
+# Battle-Ships-Game
 I developed a battle ships game using java
 Mini Project 1 - Battle Ships 
 This project will help you get more familiar with arrays. You will be recreating the game of battleships. A player will place 5 of their ships on a 10 by 10 grid. The computer and the player will deploy five ships on the same grid. Once the game starts the player and computer take turns, trying to sink each other's ships by guessing the coordinates to "attack". The game ends when either the player or computer has no ships left. 
@@ -6,22 +6,7 @@ Step 1 – Create the ocean map
 The ocean map is represented by a 10 by 10 grid of different characters. The grid is managed by a twodimensional array. You will use this 2D array to save where the user and computer decide to place their ships, as well as when someone tries to attack a location and misses. At the start of the game the array will be empty and as the game is played you will change what is stored at each index of the array accordingly. 
 Once you create your 2D array you need a way to display it to the user so they can choose coordinates. You should display your array surrounded by indexes like below: 
   Right now the sea is empty
-
-  0123456789
-
-  0|      |0
-  1|      |1
-  2|      |2
-  3|      |3
-  4|      |4
-  5|      |5 
-  6|      |6 
-  7|      |7 
-  8|      |8 
-  9|      |9
-
-0123456789
-
+![image](https://github.com/JangamPavithraReddy/Battle-Ships-Game/assets/148047712/2cfe11f6-6e4e-4cef-8e8e-de3964551f5d)
 To do this you should create a method that prints out the above by looping over the array and adding the indexes and pipe characters before and after each row. You will want to use a nested for loop to print this two-dimensional image. 
 Step 2 – Deploy player’s ships 
 Once you have your ocean map, you'll need to ask the user where they would like to place their ships. The player should deploy 5 ships. A ship will be stored in a single index of the array as a special character. To place the player's ships, they need to tell you the coordinates of where the ship should be placed, and you need to update the ocean map to reflect their choices. Remember you'll need to use a Scanner to allow the user to enter in input. 
@@ -47,33 +32,7 @@ As the user is telling you where to place their ships you need to check if that 
 If the player is trying to put the ship somewhere it can't be, re-prompt them until they choose legal coordinates for the ship. 
 You should store the player's ships within the OceanMap as '1'. That way you know within your own code which indexes store the player's ships. However, when you are printing out the map from the method you created in Step 1 you should hide where the ships are by printing an '@' symbol instead. You can accomplish this with an extra if check within the for loop that prints your ocean map. 
 Once the user is finished placing a ship you should print out the map so they can see the current state of their ships. 
-Deplo your ships:
-Enter x Coordinates for your 1.ship:2
-Enter y Coordinates for your 1.ship:2
-Enter x Coordinates for your 2.ship:5
-Enter y Coordinates for your 2.ship:5
-Enter x Coordinates for your 3.ship:8
-Enter y Coordinates for your 3.ship:3
-Enter x Coordinates for your 4.ship:3
-Enter y Coordinates for your 4.ship:7
-Enter x Coordinates for your 5.ship:8
-Enter y Coordinates for your 5.ship:8
-0123456789
-
-  0|             |0
-  1|             |1
-  2|  @          |2
-  3|             |3
-  4|             |4
-  5|   @         |5 
-  6|             |6 
-  7|       @     |7 
-  8|             |8 
-  9|             |9
-
-0123456789
-
-  
+![image](https://github.com/JangamPavithraReddy/Battle-Ships-Game/assets/148047712/35170716-b5cd-44f7-a71b-3c5403172676)
 Step 3 – Deploy computer’s ships 
 The computer will deploy 5 ships by randomly picking X and Y coordinates. Your code is responsible for generating these locations, checking if they are valid, and if so placing the ships accordingly. 
 Keep in mind: 
@@ -81,15 +40,7 @@ Keep in mind:
 •	you can’t place ships outside the 10 by 10 grid 
 If the computer tries to place the ship somewhere it can't be, regenerate random coordinates until all ships are placed appropriately. 
 You should store the computer's ships within the OceanMap as '2' and they should be invisible on the ocean map. This is because the game is to have the player guess where the ships are, so you don't want to give the game away by showing the location of the computer's ships. Thus, as the ships are being deployed you want to give the user some feedback about what is happening like so: 
-
-computer is deploying ships
-1.ship deployed
-2.ship deployed
-3.ship deployed
-4.ship deployed
-5.ship deployed
-..........................................................
-  
+![image](https://github.com/JangamPavithraReddy/Battle-Ships-Game/assets/148047712/b896a6cb-b17b-4758-b1a0-886b61a36492)
 You should generate each line of output each time you successfully place a ship based on random coordinates. 
 Step 4 – Battle 
 Player's Turn 
@@ -127,41 +78,13 @@ When the computer produces a valid guess there are three possible outcomes:
 •	You do not need to mark the map with the missed computer guesses, however you will want to decide a way to store this information in your map so the computer doesn't duplicate guesses later. 
 This is how the screen will look after couple turns 
     your turn 
-  enter x coordinate:1
-  enter y coordinate:6
-Boom! you sunk the ship!
-  Computer's Turn 
-  computer missed
-  0|                | 0
-  1| x              | 1
-  2|  @          x  | 2
-  3|  x          @  | 3
-  4|  x             | 4
-  5|   @            | 5 
-  6|           xx   | 6 
-  7|       @        | 7 
-  8| x            @ | 8 
-  9|                | 9
-0123456789
-your ships :5
-computer ships :3
+    ![image](https://github.com/JangamPavithraReddy/Battle-Ships-Game/assets/148047712/509cabde-1a63-47c2-9b61-967af816fd9a)
   
 The battle will continue to run until one of the players is out of ships. 
 Step 5 - Game Over 
-When the user and computer are done guessing, display the current state of the ocean map and score. 
-  0|                | 0
-  1| x              | 1
-  2|  @             | 2
-  3|           @    | 3
-  4|                | 4
-  5|   @            | 5 
-  6|                | 6 
-  7|       @        | 7 
-  8| x            @ | 8 
-  9|                | 9
-0123456789
-your ships :5
-computer ships :5
+When the user and computer are done guessing, display the current state of the ocean map and score. ![image](https://github.com/JangamPavithraReddy/Battle-Ships-Game/assets/148047712/ce1041fc-2025-4705-a5c1-cf6c8cceb6b7)
+
+
 The game is over when one player or computer has no ship left. 
   your ships :5
 computer ships :0
